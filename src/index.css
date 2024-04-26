@@ -3,3 +3,27 @@
   list-style: none;
   text-decoration: none;
 }
+.privacy-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  right: 100%;
+
+  background-color: blue;
+  z-index: 20;
+}
+.privacy-screen2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  right: 100%;
+
+  background-color: red;
+  z-index: 19;
+}

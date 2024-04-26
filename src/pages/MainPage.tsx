@@ -1,6 +1,11 @@
 import styled from "styled-components";
-
+import { Particle } from "../components/particlesContainer";
+import { useEffect, useState } from "react";
 export const MainPage = () => {
+  useEffect(() => {
+    console.log("mount");
+  }, []);
+
   return (
     <MainContainer>
       <TextContainer>
@@ -9,10 +14,11 @@ export const MainPage = () => {
         <Text>
           안녕하세요, 프론트엔드 개발자가 되기위해 열정으로 쌓아가고있는
           신중원입니다 아직은 부족한 부분이 많지만 새로운 것을 시도하는 것과
-          배우는 것을 좋아하기때문에 뭐든 항상 배워가는 마음가짐으로 임팩트있는
+          배우는 것을 좋아하기때문에 뭐든 항상 배워가는 마음가짐으로 발전하는
           개발자가 되기위해 노력하고 있습니다
         </Text>
       </TextContainer>
+      <Particle />
     </MainContainer>
   );
 };
@@ -20,10 +26,11 @@ export const MainPage = () => {
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 100vh;
   align-items: center;
+  height: 100vh;
   @media (max-width: 500px) {
     display: flex;
+    height: 100vh;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;

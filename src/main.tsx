@@ -1,25 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { App } from "./App.tsx";
-import { MainPage } from "./pages/MainPage.tsx";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import "./index.css";
+import { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route path="mainpage" element={<MainPage />} />
-    </Route>
-  )
-);
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+function AppWithUI() {
+  return (
+    <StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StrictMode>
+  );
+}
+
+const rootElement = document.getElementById("root") as HTMLElement;
+const root = ReactDOMClient.createRoot(rootElement);
+root.render(<AppWithUI />);
